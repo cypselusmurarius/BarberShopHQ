@@ -9,10 +9,29 @@ set :database, "sqlite3:barbershop.db"
 class Client < ActiveRecord::Base
 end
 
-class Barber <ActiveRecord::Base
+class Barber < ActiveRecord::Base
+end
+
+before do
+	@barbers = Barber.all
 end
 
 get '/' do
-	@barbers = Barber.all
 	erb :index
+end
+
+get '/visit' do
+	erb :visit
+end
+
+post '/visit' do
+
+	@username = params[:username]
+	@phone = params[:phone]
+	@datetime = params[:datetime]
+	@barber = params[:barber]
+	@color = params[:color]
+
+	erb "OK, username is #{@username}, #{@phone}, #{@datetime}, #{@barber}, #{@color}"
+
 end
