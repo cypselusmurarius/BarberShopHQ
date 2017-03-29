@@ -34,7 +34,14 @@ $(function() {
     <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @c.datestamp %>">
   </div>
 
-
+  <div class="form-group">
+      <label>Ваш парикмахер:</label>
+      <select name="client[barber]" class="form-control">
+        <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
+        <option <%= @barber == 'Walter White' ? 'selected' : '' %>>Walter White</option>
+        <option <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>
+      </select>
+</div>
 
 
   <div class="form-group">
