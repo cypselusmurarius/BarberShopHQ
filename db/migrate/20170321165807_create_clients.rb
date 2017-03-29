@@ -9,12 +9,5 @@ class CreateClients < ActiveRecord::Migration[5.0]
 
             t.timestamps
         end
-
-    Client.create :name => "#{username}",
-                  :phone => "#{phone}",
-                  :datestamp => "#{datetime}",
-                  :barber => "#{barber}",
-                  :color => "#{color}"          
-
     end
 end
